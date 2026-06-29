@@ -1,0 +1,106 @@
+[
+  {
+    "id": "1f506990da754aac80586bb0337fec89",
+    "path": "audio/piseth/khmer/khr/2300.wav"
+  },
+  {
+    "id": "846c04a9687642bcb32740e69a6dbddf",
+    "path": "audio/sreymom/khmer/khr/2300.wav"
+  },
+  {
+    "id": "8978beb529dc4f368629bd5351bf7dea",
+    "path": "audio/sreymom/english/khr/2300.wav"
+  },
+  {
+    "id": "80a42b6c05364b3b908d230593d1eab5",
+    "path": "audio/piseth/english/khr/2300.wav"
+  },
+  {
+    "id": "9b9eb1c5cd344a14920b60ec7254e1f3",
+    "path": "audio/piseth/english/khr/500.wav"
+  },
+  {
+    "id": "6599fcba32b84a6f9ceead5eb8347c2a",
+    "path": "audio/piseth/khmer/khr/1000000.wav"
+  },
+  {
+    "id": "e79e0b3cd25e4753a61e762d9e6af032",
+    "path": "audio/piseth/khmer/khr/100000.wav"
+  },
+  {
+    "id": "c801f2cc7db14ce5afb17ce2e5d4e88e",
+    "path": "audio/piseth/khmer/usd/100.66.wav"
+  },
+  {
+    "id": "df3914dcdc1d4a14acd4350e800081bc",
+    "path": "audio/piseth/khmer/usd/1.21.wav"
+  },
+  {
+    "id": "be8b053c41574048a3fe0cd663d84dae",
+    "path": "audio/piseth/khmer/usd/1000.wav"
+  },
+  {
+    "id": "67f00a02d24d487484796938f511b4cb",
+    "path": "audio/piseth/khmer/khr/1000.wav"
+  },
+  {
+    "id": "49704aea9e9a4f788430c1b6dc421a19",
+    "path": "audio/piseth/english/khr/1000.wav"
+  },
+  {
+    "id": "5bac5845b9434af0b33cb29484f6135c",
+    "path": "audio/sreymom/khmer/khr/1000.wav"
+  },
+  {
+    "id": "f9e64903e93c4d2a8e8bd194814426ea",
+    "path": "audio/sreymom/khmer/usd/1.66.wav"
+  },
+  {
+    "id": "99cd3f339ad64e15953413fc7ad327ec",
+    "path": "audio/sreymom/khmer/usd/1.23.wav"
+  },
+  {
+    "id": "82d6607a9fff4c93ae37831c3a07893d",
+    "path": "audio/sreymom/khmer/khr/1500.wav"
+  },
+  {
+    "id": "308a5486b06b4ae49e97b9beb3329be7",
+    "path": "audio/piseth/khmer/khr/1500.wav"
+  },
+  {
+    "id": "02c5119bb0c7400c9d9938df8e01abd4",
+    "path": "audio/sreymom/english/khr/1000.wav"
+  },
+  {
+    "id": "685482f1a66743eca5d3a57002143c67",
+    "path": "audio/piseth/khmer/usd/10.33.wav"
+  },
+  {
+    "id": "0fc019b6f90f4c0da2dd1284d299337e",
+    "path": "audio/piseth/khmer/usd/10.44.wav"
+  },
+  {
+    "id": "1b97e290456a44c1875078b958333f96",
+    "path": "audio/piseth/khmer/usd/144.wav"
+  },
+  {
+    "id": "d5da9ae7aa5c4c14b359a74ead9f9cca",
+    "path": "audio/piseth/khmer/usd/10200.wav"
+  },
+  {
+    "id": "427ea3fcba1a4f848a7187f55600ad3f",
+    "path": "audio/piseth/english/usd/10200.wav"
+  },
+  {
+    "id": "1fd73a0b22204f07ad3047351d45fac6",
+    "path": "audio/sreymom/english/usd/10200.wav"
+  },
+  {
+    "id": "7213efe8c2634b02bb64837f223239a2",
+    "path": "audio/sreymom/english/usd/1.66.wav"
+  },
+  {
+    "id": "4f881ba68d5a40cf8571fccee1eefa59",
+    "path": "audio/piseth/khmer/usd/1.66.wav"
+  }
+]

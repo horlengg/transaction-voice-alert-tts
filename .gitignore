@@ -1,0 +1,107 @@
+# ==========================================
+# 1. Python / FastAPI (e.g., for /api)
+# ==========================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+ENV/
+bin/
+lib/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Inline Secrets & Configuration
+.env
+.flaskenv
+*.secret
+
+# FastAPI / Uvicorn / Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+
+# ==========================================
+# 2. Apple / SwiftUI (e.g., for /OpenAITextToSpeech)
+# ==========================================
+
+# Xcode project and user settings
+# (Leave Xcode project structures alone, but ignore personal layouts)
+xcuserdata/
+*.mode1v3
+*.mode2v3
+*.storyboardc
+*.xccheckout
+*.moved-aside
+
+# Architecture & Build artifacts
+build/
+DerivedData/
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager (SPM) artifacts
+.build/
+.swiftpm/
+# If you check in your dependencies' source, uncomment the next line:
+# Packages/
+
+# Packages overrides
+Package.resolved
+
+# CocoaPods (if you use them instead of SPM)
+# Pods/
+# CMake / Carthage artifacts
+Carthage/
+CMakeCache.txt
+CMakeFiles/
+
+
+# ==========================================
+# 3. Global OS & Editor Garbage
+# ==========================================
+
+# macOS Finder & system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# VS Code / JetBrains / Cursor
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+*~
