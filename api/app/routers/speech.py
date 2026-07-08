@@ -1,12 +1,10 @@
 import io
-from pathlib import Path
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from utils import build_tts_text, validate_trx_request,build_audio_path
 from app.core.audio_db import add_entry
 from app.core import generate_trx_audio
-import app.config as config
 from typing import Literal
 
 router = APIRouter(prefix="/speech", tags=["speech"])
@@ -23,23 +21,6 @@ class SpeechRequest(BaseModel):
     trxAmount: str
     trxCurrency: str
     format: Literal["wav", "caf", "mp3"] = "wav"
-
-# @router.post("/{voice_name}/{language_code}/generate")
-# def generate_speech(voice_name: str, language_code: str, request: SpeechRequest):
-#     tts_text = build_tts_text(language_code, request.trxAmount, request.trxCurrency.upper())
-#     print("Generating:", tts_text)
-
-#     try:
-#         raw_bytes = generate_trx_audio(tts_text, voice_name, language_code, output_format=request.format)
-
-#         return StreamingResponse(
-#             io.BytesIO(raw_bytes),
-#             media_type=config.MEDIA_TYPES.get(request.format, "audio/wav"),
-#             headers={"Content-Disposition": f"attachment; filename=paysound.{request.format}"},
-#         )
-#     except Exception as e:
-#         raise HTTPException(status_code=500, detail=str(e))
-    
 
 @router.post("/{voice_name}/{language_code}/generate")
 def generate_trx_speech(voice_name: str, language_code: str, request: SpeechRequest):

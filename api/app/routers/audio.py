@@ -1,21 +1,27 @@
 from pathlib import Path
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
-from app.core.audio_db import find_entry_by_id
+from app.core.audio_db import find_entry_by_id,load_db
 
 router = APIRouter(prefix="/audio", tags=["audio"])
 
 BASE_DIR = Path("audio").resolve()
 
+@router.get("/")
+def get_audio_by_file_id():
+    return load_db()
+
 @router.get("/{file_id}")
 def get_audio_by_file_id(file_id: str):
-    print(file_id)
     # 1. Look up record in JSON db
     record = find_entry_by_id(file_id)
     
     if not record:
         raise HTTPException(status_code=404, detail="File ID not found.")
     
+    print("-----------------------------------------------------------")
+    print(f"Accessing to file => {record['path']}")
+    print("-----------------------------------------------------------")
     
 
     # 2. Resolve and validate path
@@ -38,8 +44,6 @@ def get_audio_by_file_id(file_id: str):
         media_type="audio/wav",
         headers={"Content-Disposition": f"attachment; filename={full_path.name}"},
     )
-
-
 
 
 # @router.get("/encode")

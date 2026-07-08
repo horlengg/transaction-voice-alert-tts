@@ -10,14 +10,10 @@ KHMER_VOICE = {
     "sreymom" : "km-KH-SreymomNeural"
 }
 
-
-
 LANGUAGE_NAME = {
     "en-us" : "english",
     "km-kh" : "khmer"
 }
-
-
 
 CURRENCY_DISPLAY = {
     "en": {"USD": "dollar", "KHR": "riel"},

@@ -12,14 +12,14 @@ def get_edge_tts_voice(voice_name: str, language_code: str) -> str:
         return ENGLISH_VOICE[voice_name]
     return KHMER_VOICE[voice_name]
 
-
 def convert_audio(wav_bytes: bytes, output_format: str) -> bytes:
-    """Convert WAV bytes to target format using FFmpeg."""
-    with tempfile.NamedTemporaryFile(suffix=".wav", delete=False) as tmp_wav:
-        tmp_wav.write(wav_bytes)
-        tmp_wav_path = tmp_wav.name
+    """Convert audio bytes (MP3 from edge_tts) to target format using FFmpeg."""
+    # ✅ Use .mp3 suffix so FFmpeg detects the input format correctly
+    with tempfile.NamedTemporaryFile(suffix=".mp3", delete=False) as tmp_in:
+        tmp_in.write(wav_bytes)
+        tmp_in_path = tmp_in.name
 
-    tmp_out_path = tmp_wav_path.replace(".wav", f".{output_format}")
+    tmp_out_path = tmp_in_path.replace(".mp3", f".{output_format}")
 
     format_map = {
         "caf": "caf",
@@ -36,7 +36,9 @@ def convert_audio(wav_bytes: bytes, output_format: str) -> bytes:
     try:
         subprocess.run(
             [
-                "ffmpeg", "-y", "-i", tmp_wav_path,
+                "ffmpeg", "-y", "-i", tmp_in_path,
+                "-ar", "22050",   # ✅ iOS preferred sample rate
+                "-ac", "1",       # ✅ Mono
                 "-f", format_map[output_format],
                 "-c:a", codec_map[output_format],
                 tmp_out_path,
@@ -49,7 +51,7 @@ def convert_audio(wav_bytes: bytes, output_format: str) -> bytes:
     except subprocess.CalledProcessError as e:
         raise RuntimeError(f"FFmpeg conversion to {output_format} failed: {e.stderr.decode()}")
     finally:
-        Path(tmp_wav_path).unlink(missing_ok=True)
+        Path(tmp_in_path).unlink(missing_ok=True)
         Path(tmp_out_path).unlink(missing_ok=True)
 
 
@@ -61,10 +63,9 @@ async def _generate_trx_audio(tts_text: str, voice_name: str, language_code: str
         if chunk["type"] == "audio":
             audio_bytes.write(chunk["data"])
     audio_bytes.seek(0)
-    raw_bytes = audio_bytes.read()
+    raw_bytes = audio_bytes.read()  # This is always MP3
 
-    if output_format == "wav":
-        return raw_bytes
+    # ✅ Always convert — raw_bytes is MP3 regardless of desired output
     return convert_audio(raw_bytes, output_format)
 
 
