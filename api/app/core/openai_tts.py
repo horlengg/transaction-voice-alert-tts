@@ -5,6 +5,7 @@ import subprocess
 import tempfile
 from pathlib import Path
 from app.config import ENGLISH_VOICE, KHMER_VOICE
+import imageio_ffmpeg
 
 
 def get_edge_tts_voice(voice_name: str, language_code: str) -> str:
@@ -34,11 +35,13 @@ def convert_audio(wav_bytes: bytes, output_format: str) -> bytes:
     }
 
     try:
+        ffmpeg_exe = imageio_ffmpeg.get_ffmpeg_exe()
+
         subprocess.run(
             [
-                "ffmpeg", "-y", "-i", tmp_in_path,
-                "-ar", "22050",   # ✅ iOS preferred sample rate
-                "-ac", "1",       # ✅ Mono
+                ffmpeg_exe, "-y", "-i", tmp_in_path,
+                "-ar", "22050",
+                "-ac", "1",
                 "-f", format_map[output_format],
                 "-c:a", codec_map[output_format],
                 tmp_out_path,
