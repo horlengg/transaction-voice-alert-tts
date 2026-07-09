@@ -1,0 +1,83 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "[%@]" : {
+
+    },
+    "%lld KB" : {
+
+    },
+    "0.00" : {
+
+    },
+    "Done" : {
+
+    },
+    "Generate Audio" : {
+
+    },
+    "Generating…" : {
+
+    },
+    "Go to Profile" : {
+
+    },
+    "Grid" : {
+
+    },
+    "Grid Menu" : {
+
+    },
+    "Home" : {
+
+    },
+    "home_menu_mobile_top_up" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mobile Top Up"
+          }
+        },
+        "km-KH" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "បញ្ជូលលុយទូរសព្ទ"
+          }
+        }
+      }
+    },
+    "Layout" : {
+
+    },
+    "List" : {
+
+    },
+    "OK" : {
+
+    },
+    "OpenAI TTS" : {
+
+    },
+    "Play" : {
+
+    },
+    "Playback Error" : {
+
+    },
+    "Profile of %@" : {
+
+    },
+    "Stop" : {
+
+    },
+    "Text-to-speech · Transaction audio" : {
+
+    },
+    "Toggle Language" : {
+
+    }
+  },
+  "version" : "1.2"
+}

@@ -1,0 +1,25 @@
+{
+    "aps": {
+        "alert": {
+            "title": "Received from Ly Houleng",
+            "body":
+                "23 USD is received to account 10163717 from account 00010442765618"
+        },
+        "mutable-content": 1
+    },
+    "custom": {
+        "a": {
+            "id": "123456",
+            "type": "01",
+            "transactionID": "TXN-987654321",
+            "body": "Your account has been credited.",
+            "clickAction": "OPEN_TRANSACTION_DETAIL",
+            "deepLink": "myapp://transactions/123456",
+            "requestTime": "2026-06-25T10:00:00Z",
+            "visibilityYN": "Y",
+            "url": "https://example.com/receipt.pdf"
+        }
+    },
+    "audioUrl":
+        "https://trx-voice-alert-tts.vercel.app/openai/api/v1/audio/sreymom/khmer/usd/23.wav"
+}

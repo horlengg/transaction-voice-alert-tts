@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 @main
 struct OpenAITextToSpeechApp: App {
+    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
     var body: some Scene {
         WindowGroup {
             ContentView()

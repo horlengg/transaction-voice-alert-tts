@@ -30,7 +30,7 @@ struct SpeechResponse: Codable {
 
 class SpeechService {
     static let shared = SpeechService()
-    private let baseURL = "http://ITFMB-KQHN2G95NQ.local:8000"
+    private let baseURL = "https://trx-voice-alert-tts.vercel.app"
     
     func generateSpeech(
         voiceName: String,
@@ -38,6 +38,8 @@ class SpeechService {
         trxAmount: String,
         trxCurrency: String
     ) async throws -> Data {
+        
+        print("\(baseURL)/openai/api/v1/speech/\(voiceName)/\(languageCode)/generate")
 
         guard let url = URL(string: "\(baseURL)/openai/api/v1/speech/\(voiceName)/\(languageCode)/generate") else {
             throw URLError(.badURL)
@@ -51,9 +53,13 @@ class SpeechService {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer ...", forHTTPHeaderField: "Authorization")
         request.httpBody = try JSONEncoder().encode(body)
+        
 
         let (data, response) = try await URLSession.shared.data(for: request)
+        
+        
 
         guard let httpResponse = response as? HTTPURLResponse,
               httpResponse.statusCode == 200 else {

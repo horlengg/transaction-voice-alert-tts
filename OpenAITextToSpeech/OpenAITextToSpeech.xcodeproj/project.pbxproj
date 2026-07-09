@@ -6,7 +6,22 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3841D3F72FF667B5006A7D83 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = 3841D3F62FF667B5006A7D83 /* Swinject */; };
+		3842C2F62FF766CA003A9C6A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3842C2F52FF766CA003A9C6A /* Kingfisher */; };
+		389F77F32FFA63C200ADD710 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 389F77F12FFA63C200ADD710 /* Localizable.xcstrings */; };
+		38A967602FFE93E2003852A2 /* NotificationService.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 38A967592FFE93E2003852A2 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		38CAC29E2FFB941600C5FA15 /* MenuDragDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38CAC29D2FFB941000C5FA15 /* MenuDragDrop.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		38A9675E2FFE93E2003852A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38AE5D0F2FF15ED8008CA9A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38A967582FFE93E2003852A2;
+			remoteInfo = NotificationService;
+		};
 		38AE5D252FF15EDA008CA9A7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 38AE5D0F2FF15ED8008CA9A7 /* Project object */;
@@ -23,15 +38,60 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		380D97012FF275D300247EA7 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				38A967602FFE93E2003852A2 /* NotificationService.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		389F77F12FFA63C200ADD710 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		38A967592FFE93E2003852A2 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AE5D172FF15ED8008CA9A7 /* OpenAITextToSpeech.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenAITextToSpeech.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AE5D242FF15EDA008CA9A7 /* OpenAITextToSpeechTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenAITextToSpeechTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AE5D2E2FF15EDA008CA9A7 /* OpenAITextToSpeechUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenAITextToSpeechUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		38CAC29D2FFB941000C5FA15 /* MenuDragDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDragDrop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		380D954C2FF2738600247EA7 /* Exceptions for "OpenAITextToSpeech" folder in "OpenAITextToSpeech" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 38AE5D162FF15ED8008CA9A7 /* OpenAITextToSpeech */;
+		};
+		38A967642FFE93E2003852A2 /* Exceptions for "NotificationService" folder in "NotificationService" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 38A967582FFE93E2003852A2 /* NotificationService */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		38A9675A2FFE93E2003852A2 /* NotificationService */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				38A967642FFE93E2003852A2 /* Exceptions for "NotificationService" folder in "NotificationService" target */,
+			);
+			path = NotificationService;
+			sourceTree = "<group>";
+		};
 		38AE5D192FF15ED8008CA9A7 /* OpenAITextToSpeech */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				380D954C2FF2738600247EA7 /* Exceptions for "OpenAITextToSpeech" folder in "OpenAITextToSpeech" target */,
+			);
 			path = OpenAITextToSpeech;
 			sourceTree = "<group>";
 		};
@@ -48,10 +108,19 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		38A967562FFE93E2003852A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38AE5D142FF15ED8008CA9A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3842C2F62FF766CA003A9C6A /* Kingfisher in Frameworks */,
+				3841D3F72FF667B5006A7D83 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,9 +144,12 @@
 		38AE5D0E2FF15ED8008CA9A7 = {
 			isa = PBXGroup;
 			children = (
+				38CAC29D2FFB941000C5FA15 /* MenuDragDrop.swift */,
+				389F77F12FFA63C200ADD710 /* Localizable.xcstrings */,
 				38AE5D192FF15ED8008CA9A7 /* OpenAITextToSpeech */,
 				38AE5D272FF15EDA008CA9A7 /* OpenAITextToSpeechTests */,
 				38AE5D312FF15EDA008CA9A7 /* OpenAITextToSpeechUITests */,
+				38A9675A2FFE93E2003852A2 /* NotificationService */,
 				38AE5D182FF15ED8008CA9A7 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +160,7 @@
 				38AE5D172FF15ED8008CA9A7 /* OpenAITextToSpeech.app */,
 				38AE5D242FF15EDA008CA9A7 /* OpenAITextToSpeechTests.xctest */,
 				38AE5D2E2FF15EDA008CA9A7 /* OpenAITextToSpeechUITests.xctest */,
+				38A967592FFE93E2003852A2 /* NotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,6 +168,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		38A967582FFE93E2003852A2 /* NotificationService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 38A967612FFE93E2003852A2 /* Build configuration list for PBXNativeTarget "NotificationService" */;
+			buildPhases = (
+				38A967552FFE93E2003852A2 /* Sources */,
+				38A967562FFE93E2003852A2 /* Frameworks */,
+				38A967572FFE93E2003852A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				38A9675A2FFE93E2003852A2 /* NotificationService */,
+			);
+			name = NotificationService;
+			packageProductDependencies = (
+			);
+			productName = NotificationService;
+			productReference = 38A967592FFE93E2003852A2 /* NotificationService.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		38AE5D162FF15ED8008CA9A7 /* OpenAITextToSpeech */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38AE5D382FF15EDA008CA9A7 /* Build configuration list for PBXNativeTarget "OpenAITextToSpeech" */;
@@ -102,16 +197,20 @@
 				38AE5D132FF15ED8008CA9A7 /* Sources */,
 				38AE5D142FF15ED8008CA9A7 /* Frameworks */,
 				38AE5D152FF15ED8008CA9A7 /* Resources */,
+				380D97012FF275D300247EA7 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				38A9675F2FFE93E2003852A2 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				38AE5D192FF15ED8008CA9A7 /* OpenAITextToSpeech */,
 			);
 			name = OpenAITextToSpeech;
 			packageProductDependencies = (
+				3841D3F62FF667B5006A7D83 /* Swinject */,
+				3842C2F52FF766CA003A9C6A /* Kingfisher */,
 			);
 			productName = OpenAITextToSpeech;
 			productReference = 38AE5D172FF15ED8008CA9A7 /* OpenAITextToSpeech.app */;
@@ -173,6 +272,9 @@
 				LastSwiftUpdateCheck = 2650;
 				LastUpgradeCheck = 2650;
 				TargetAttributes = {
+					38A967582FFE93E2003852A2 = {
+						CreatedOnToolsVersion = 26.5;
+					};
 					38AE5D162FF15ED8008CA9A7 = {
 						CreatedOnToolsVersion = 26.5;
 					};
@@ -192,9 +294,14 @@
 			knownRegions = (
 				en,
 				Base,
+				"km-KH",
 			);
 			mainGroup = 38AE5D0E2FF15ED8008CA9A7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				3841D3F52FF667B5006A7D83 /* XCRemoteSwiftPackageReference "swinject" */,
+				3842C2F42FF766CA003A9C6A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 38AE5D182FF15ED8008CA9A7 /* Products */;
 			projectDirPath = "";
@@ -203,15 +310,24 @@
 				38AE5D162FF15ED8008CA9A7 /* OpenAITextToSpeech */,
 				38AE5D232FF15EDA008CA9A7 /* OpenAITextToSpeechTests */,
 				38AE5D2D2FF15EDA008CA9A7 /* OpenAITextToSpeechUITests */,
+				38A967582FFE93E2003852A2 /* NotificationService */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		38A967572FFE93E2003852A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38AE5D152FF15ED8008CA9A7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				389F77F32FFA63C200ADD710 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,10 +348,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		38A967552FFE93E2003852A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		38AE5D132FF15ED8008CA9A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38CAC29E2FFB941600C5FA15 /* MenuDragDrop.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +380,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		38A9675F2FFE93E2003852A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38A967582FFE93E2003852A2 /* NotificationService */;
+			targetProxy = 38A9675E2FFE93E2003852A2 /* PBXContainerItemProxy */;
+		};
 		38AE5D262FF15EDA008CA9A7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 38AE5D162FF15ED8008CA9A7 /* OpenAITextToSpeech */;
@@ -269,6 +398,66 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		38A967622FFE93E2003852A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NBSAW3G27X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chipmongbank.bankingapp.uat.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		38A967632FFE93E2003852A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NotificationService/NotificationService.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = NBSAW3G27X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NotificationService/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = NotificationService;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chipmongbank.bankingapp.uat.NotificationService;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		38AE5D362FF15EDA008CA9A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -329,6 +518,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -386,6 +576,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -395,23 +586,29 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OpenAITextToSpeech/OpenAITextToSpeech.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H48V353M64;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = NBSAW3G27X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OpenAITextToSpeech/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chipmongbank.openai-tts.OpenAITextToSpeech";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chipmongbank.bankingapp.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -427,23 +624,29 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = OpenAITextToSpeech/OpenAITextToSpeech.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H48V353M64;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = NBSAW3G27X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OpenAITextToSpeech/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.chipmongbank.openai-tts.OpenAITextToSpeech";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chipmongbank.bankingapp.uat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
@@ -541,6 +744,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		38A967612FFE93E2003852A2 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				38A967622FFE93E2003852A2 /* Debug */,
+				38A967632FFE93E2003852A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		38AE5D122FF15ED8008CA9A7 /* Build configuration list for PBXProject "OpenAITextToSpeech" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -578,6 +790,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3841D3F52FF667B5006A7D83 /* XCRemoteSwiftPackageReference "swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/swinject/swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.10.0;
+			};
+		};
+		3842C2F42FF766CA003A9C6A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.10.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3841D3F62FF667B5006A7D83 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3841D3F52FF667B5006A7D83 /* XCRemoteSwiftPackageReference "swinject" */;
+			productName = Swinject;
+		};
+		3842C2F52FF766CA003A9C6A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3842C2F42FF766CA003A9C6A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 38AE5D0F2FF15ED8008CA9A7 /* Project object */;
 }

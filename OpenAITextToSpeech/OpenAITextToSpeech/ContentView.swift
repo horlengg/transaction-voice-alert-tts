@@ -72,6 +72,16 @@ struct ContentView : View {
                 .padding(.horizontal, 20)
             }
         }
+        .onLongPressGesture(minimumDuration: 1.0) {
+            let impactMed = UIImpactFeedbackGenerator(style: .medium)
+            impactMed.impactOccurred()
+            if let deviceToken = UserDefaults.standard.string(forKey: "device_token") {
+                UIPasteboard.general.string = deviceToken
+            } else {
+                errorMessage = "No device_token found in UserDefaults"
+                showError = true
+            }
+        }
         .alert("Playback Error", isPresented: $showError) {
             Button("OK", role: .cancel) {}
         } message: {
@@ -486,6 +496,7 @@ struct ContentView : View {
                 clear()
                 errorMessage = error.localizedDescription
                 showError = true
+                print(error.localizedDescription)
             }
             
         }
