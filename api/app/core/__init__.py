@@ -1,1 +1,1 @@
-from app.core.openai_tts import generate_trx_audio
+from app.core.openai_tts import _generate_trx_audio

@@ -1,20 +1,22 @@
 import io
-from fastapi import APIRouter, HTTPException
-from fastapi.responses import StreamingResponse
+import os
+import traceback
+from fastapi import APIRouter, HTTPException, Response
 from pydantic import BaseModel
-from utils import build_tts_text, validate_trx_request,build_audio_path
-from app.core.audio_db import add_entry
-from app.core import generate_trx_audio
 from typing import Literal
+from utils import build_tts_text, validate_trx_request, build_blob_key
+from app.core import _generate_trx_audio
+from dotenv import load_dotenv
+from app.storage import blob_exists,upload_to_blob,blob_client
+from fastapi.responses import StreamingResponse
+
+load_dotenv()  
+
 
 router = APIRouter(prefix="/speech", tags=["speech"])
 
-
-class SpeechRequest(BaseModel):
-    message: str
-    language: str = "km-kh"
-    voiceId: int = 147328
-    speechModel: str = "mars-81-flash"
+BLOB_TOKEN = os.environ["BLOB_READ_WRITE_TOKEN"]
+BLOB_API_URL = "https://blob.vercel-storage.com"
 
 
 class SpeechRequest(BaseModel):
@@ -22,46 +24,34 @@ class SpeechRequest(BaseModel):
     trxCurrency: str
     format: Literal["wav", "caf", "mp3"] = "wav"
 
+
 @router.post("/{voice_name}/{language_code}/generate")
-def generate_trx_speech(voice_name: str, language_code: str, request: SpeechRequest):
+async def generate_trx_speech(voice_name: str, language_code: str, request: SpeechRequest):
     trx_amount = request.trxAmount.replace(",", "")
     trx_currency = request.trxCurrency.upper()
 
     validate_trx_request(voice_name, language_code, trx_amount, trx_currency)
 
-    cache_path = build_audio_path(lang=language_code,voice_name=voice_name,ccy=trx_currency,amt=trx_amount)
-    path_str = str(cache_path)
+    blob_key = build_blob_key(
+        lang=language_code, voice_name=voice_name, ccy=trx_currency, amt=trx_amount
+    )  # e.g. "speech/sreymom/km-kh/KHR-200000.wav"
 
-    if cache_path.exists():
-        add_entry(path_str)
+    # 1. Check cache in Blob
+    cached_url = await blob_exists(blob_key)
+    if cached_url:
+        result = await blob_client.get(blob_key, access="private")
+        return Response(content=result.content, media_type=result.content_type or "audio/wav")
 
-        def iter_cached():
-            with open(cache_path, "rb") as f:
-                yield from f
-
-        return StreamingResponse(
-            iter_cached(),
-            media_type="audio/wav",
-            headers={"Content-Disposition": "attachment; filename=paysound.wav"},
-        )
-
+    # 2. Generate + upload
     tts_text = build_tts_text(language_code, trx_amount, trx_currency)
     print("Generating:", tts_text)
 
     try:
-        raw_bytes = generate_trx_audio(tts_text, voice_name, language_code)
-
-        cache_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(cache_path, "wb") as f:
-            f.write(raw_bytes)
-
-        add_entry(path_str)
-
-        return StreamingResponse(
-            io.BytesIO(raw_bytes),
-            media_type="audio/wav",
-            headers={"Content-Disposition": "attachment; filename=paysound.wav"},
-        )
+        raw_bytes = await _generate_trx_audio(tts_text, voice_name, language_code)
+        await upload_to_blob(blob_key, raw_bytes, content_type="audio/wav")
+        return StreamingResponse(io.BytesIO(raw_bytes), media_type="audio/wav")
 
     except Exception as e:
+        traceback.print_exc()  # <--- This prints the line + specific error to your terminal logs
         raise HTTPException(status_code=500, detail=str(e))
+    

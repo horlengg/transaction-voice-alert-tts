@@ -63,10 +63,10 @@ async def _generate_trx_audio(tts_text: str, voice_name: str, language_code: str
         if chunk["type"] == "audio":
             audio_bytes.write(chunk["data"])
     audio_bytes.seek(0)
-    raw_bytes = audio_bytes.read()  # This is always MP3
+    raw_bytes = audio_bytes.read()
 
-    # ✅ Always convert — raw_bytes is MP3 regardless of desired output
-    return convert_audio(raw_bytes, output_format)
+    # run blocking FFmpeg subprocess in a thread so it doesn't block the event loop
+    return await asyncio.to_thread(convert_audio, raw_bytes, output_format)
 
 
 def generate_trx_audio(tts_text: str, voice_name: str, language_code: str, output_format: str = "wav") -> bytes:
