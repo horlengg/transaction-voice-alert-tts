@@ -75,10 +75,11 @@ def build_tts_text(language_code: str, trx_amount: str, trx_currency: str) -> st
             else:
                 return f"ទទួលបាន {kh_dollars} ដុល្លា"
         else:
+            formatted_dollars = f"{int(dollars):,}"
             if has_cents:
-                return f"Received {dollars} dollar and {cents} cent"
+                return f"Received {formatted_dollars} dollar and {cents} cent"
             else:
-                return f"Received {dollars} dollar"
+                return f"Received {formatted_dollars} dollar"
 
     else:
         currency_map = config.CURRENCY_DISPLAY.get(lang_key, config.CURRENCY_DISPLAY["en"])
@@ -88,4 +89,5 @@ def build_tts_text(language_code: str, trx_amount: str, trx_currency: str) -> st
             kh_amount = number_to_khmer(trx_amount)  # ✅ words, not digits
             return f"ទទួលបាន {kh_amount} {currency_label}"
         else:
-            return f"Received {trx_amount} {currency_label}"
+            formatted_amount = f"{int(trx_amount):,}"
+            return f"Received {formatted_amount} {currency_label}"
